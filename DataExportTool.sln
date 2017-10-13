@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataExportTool", "DataExportTool\DataExportTool.csproj", "{277EE3AF-8719-41EF-B09D-566EAD1BD975}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IExportPlugin", "IExportPlugin\IExportPlugin.csproj", "{45C32448-15D9-41DC-A975-ACEC95C3AB4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PandoraExport", "PandoraExport\PandoraExport.csproj", "{0ABAD7E8-526F-4016-BF8F-E30E0EE2F0D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuaExport", "LuaExport\LuaExport.csproj", "{054A9271-48BF-4AB6-BA51-6EB95F3CD363}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{277EE3AF-8719-41EF-B09D-566EAD1BD975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{277EE3AF-8719-41EF-B09D-566EAD1BD975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{277EE3AF-8719-41EF-B09D-566EAD1BD975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{277EE3AF-8719-41EF-B09D-566EAD1BD975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45C32448-15D9-41DC-A975-ACEC95C3AB4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C32448-15D9-41DC-A975-ACEC95C3AB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C32448-15D9-41DC-A975-ACEC95C3AB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C32448-15D9-41DC-A975-ACEC95C3AB4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ABAD7E8-526F-4016-BF8F-E30E0EE2F0D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABAD7E8-526F-4016-BF8F-E30E0EE2F0D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABAD7E8-526F-4016-BF8F-E30E0EE2F0D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABAD7E8-526F-4016-BF8F-E30E0EE2F0D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{054A9271-48BF-4AB6-BA51-6EB95F3CD363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{054A9271-48BF-4AB6-BA51-6EB95F3CD363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{054A9271-48BF-4AB6-BA51-6EB95F3CD363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{054A9271-48BF-4AB6-BA51-6EB95F3CD363}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
