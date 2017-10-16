@@ -1,0 +1,53 @@
+# DataExportTool
+Excel配置表导出工具  
+支持插件自定义导出格式  
+目前实现一种基于Excel到处自定义二进制的导出插件  
+【格式  
+第一行：注释  
+第二行：KEY  
+第三行：类型（bool byte short int string）  
+第四行-最后：数据】  
+<table border="1">
+  <tr>
+    <td>学号</td>
+    <td>姓名</td>
+    <td>年龄</td>
+    <td>成绩</td>
+    <td>备注</td>
+  </tr>
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Age</td>
+    <td>Score</td>
+    <td>Desc</td>
+  </tr>
+  <tr>
+    <td>int</td>
+    <td>string</td>
+    <td>int</td>
+    <td>short</td>
+    <td>string</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Alex</td>
+    <td>18</td>
+    <td>95</td>
+    <td>E_1</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Bert</td>
+    <td>17</td>
+    <td>65</td>
+    <td>B_1</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Frac</td>
+    <td>18</td>
+    <td>100</td>
+    <td>Good</td>
+  </tr>
+</table>
