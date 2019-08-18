@@ -5,77 +5,65 @@ using System.Reflection;
 
 namespace DataExportTool
 {
-    public class PluginManager
+    public static class PluginManager
     {
         public static readonly string ExportPluginBaseName = "IExportPlugin";
+        public static List<IExportPlugin.IExportPlugin> ExportPlugins { get; } = new List<IExportPlugin.IExportPlugin>();
 
-        private static PluginManager instance = null;
-
-        private List<IExportPlugin.IExportPlugin> m_ExportPlugins = new List<IExportPlugin.IExportPlugin>();
-
-        public List<IExportPlugin.IExportPlugin> ExportPlgLists
+        static PluginManager()
         {
-            get { return m_ExportPlugins; }
+            ExportPlugins.Clear();
         }
 
-        public PluginManager()
+        public static void LoadExportPlugins(string PluginRootPath)
         {
-            m_ExportPlugins.Clear();
-        }
+            var PluginList = Directory.GetFiles(PluginRootPath);
 
-        public static PluginManager Instance()
-        {
-            if (instance == null)
+            foreach (var PluginPath in PluginList)
             {
-                instance = new PluginManager();
-            }
-            return instance;
-        }
-
-        public void LoadExportPlugins(string pluginRootPath)
-        {
-            string[] pluginList = Directory.GetFiles(pluginRootPath);
-
-            foreach (string pluginPath in pluginList)
-            {
-                if (Path.GetExtension(pluginPath) != ".dll")
+                if (Path.GetExtension(PluginPath) != ".dll")
                 {
                     continue;
                 }
 
-                string pluginName = Path.GetFileNameWithoutExtension(pluginPath);
-
-                if (pluginName == ExportPluginBaseName)
+                var PluginName = Path.GetFileNameWithoutExtension(PluginPath);
+                if (PluginName == ExportPluginBaseName)
                 {
                     continue;
                 }
 
-                string fullPath = $"{System.Windows.Forms.Application.StartupPath}\\ExportPlugin\\{pluginName}.dll";
-                if (!File.Exists(fullPath))
+                var FullPath = $"{AppDomain.CurrentDomain.BaseDirectory}ExportPlugin/{PluginName}.dll";
+                if (!File.Exists(FullPath))
                 {
                     continue;
                 }
 
-                var ass = Assembly.LoadFile(fullPath);
-                foreach (var t in ass.GetTypes())
+                var PluginAss = Assembly.LoadFile(FullPath);
+                foreach (var T in PluginAss.GetTypes())
                 {
-                    if (t.GetInterface(ExportPluginBaseName) != null)
+                    if (T.GetInterface(ExportPluginBaseName) != null)
                     {
-                        var plugin = Activator.CreateInstance(t) as IExportPlugin.IExportPlugin;
-                        plugin.SetPath(fullPath);
-                        m_ExportPlugins.Add(plugin);
+                        if (Activator.CreateInstance(T) is IExportPlugin.IExportPlugin Plugin)
+                        {
+                            Plugin.SetPath(FullPath);
+                            ExportPlugins.Add(Plugin);
+                        }
+                        else
+                        {
+                            Logger.Error($"unknown plugin type : {T.FullName}");
+                        }
                     }
                 }
             }
         }
 
-        public IExportPlugin.IExportPlugin GetExportPluginWithName(string name)
+        public static IExportPlugin.IExportPlugin GetExportPluginWithName(string Name)
         {
-            foreach (var plugin in m_ExportPlugins)
+            foreach (var Plugin in ExportPlugins)
             {
-                if (plugin.GetDisplayName() == name)
+                if (Plugin.GetDisplayName() == Name)
                 {
-                    return plugin;
+                    return Plugin;
                 }
             }
 

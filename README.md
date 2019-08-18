@@ -1,8 +1,9 @@
 # DataExportTool
-Excel配置表导出工具  
+Excel配置表导出工具
+支持AppUpdate  
 支持插件自定义导出格式  
-目前只实现一种基于Excel导出自定义二进制的导出插件  
-也可实现Excel导出Lua之类的  
+目前实现一种基于Excel导出自定义二进制的导出插件和一种Excel导出Lua
+
 【格式  
 第一行：注释  
 第二行：KEY  

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataExportTool", "DataExportTool\DataExportTool.csproj", "{277EE3AF-8719-41EF-B09D-566EAD1BD975}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PandoraExport", "PandoraExport\PandoraExport.csproj", "{0ABAD7E8-526F-4016-BF8F-E30E0EE2F0D8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuaExport", "LuaExport\LuaExport.csproj", "{054A9271-48BF-4AB6-BA51-6EB95F3CD363}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppUpdater", "AppUpdater\AppUpdater.csproj", "{F20C4C83-0F3F-47A0-A2C3-D38144573306}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{054A9271-48BF-4AB6-BA51-6EB95F3CD363}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{054A9271-48BF-4AB6-BA51-6EB95F3CD363}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{054A9271-48BF-4AB6-BA51-6EB95F3CD363}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F20C4C83-0F3F-47A0-A2C3-D38144573306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20C4C83-0F3F-47A0-A2C3-D38144573306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20C4C83-0F3F-47A0-A2C3-D38144573306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20C4C83-0F3F-47A0-A2C3-D38144573306}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69E1DB07-97D5-42BC-BE67-EF8A9D85F315}
 	EndGlobalSection
 EndGlobal

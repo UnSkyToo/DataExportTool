@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace IExportPlugin
 {
-    public struct ExportData
+    public class ExportData
     {
         public string Name;
         public string InputPath;
@@ -19,12 +18,12 @@ namespace IExportPlugin
 
         string GetVersion();
 
-        void SetPath(string path);
+        void SetPath(string Path);
 
         string GetPath();
 
-        bool Export(ExportData data);
+        bool Export(ExportData Data);
 
-        string Check(ExportData data);
+        string Check(ExportData Data);
     }
 }

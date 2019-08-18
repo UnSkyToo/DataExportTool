@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DataExportTool
@@ -17,12 +10,12 @@ namespace DataExportTool
             InitializeComponent();
         }
 
-        private void PluginForm_Load(object sender, EventArgs e)
+        private void PluginForm_Load(object Sender, EventArgs Args)
         {
-            refreshWithPlugin();
+            RefreshWithPlugin();
         }
 
-        private void refreshWithPlugin()
+        private void RefreshWithPlugin()
         {
             listViewPlugin.View = View.Details;
             listViewPlugin.FullRowSelect = true;
@@ -34,14 +27,14 @@ namespace DataExportTool
             listViewPlugin.Columns.Add("后缀", 60, HorizontalAlignment.Left);
             listViewPlugin.Columns.Add("路径", 300, HorizontalAlignment.Left);
 
-            foreach (var plugin in PluginManager.Instance().ExportPlgLists)
+            foreach (var Plugin in PluginManager.ExportPlugins)
             {
-                ListViewItem item = new ListViewItem();
-                item.Text = plugin.GetDisplayName();
-                item.SubItems.Add(plugin.GetVersion());
-                item.SubItems.Add(plugin.GetExportExt());
-                item.SubItems.Add(plugin.GetPath());
-                listViewPlugin.Items.Add(item);
+                var Item = new ListViewItem();
+                Item.Text = Plugin.GetDisplayName();
+                Item.SubItems.Add(Plugin.GetVersion());
+                Item.SubItems.Add(Plugin.GetExportExt());
+                Item.SubItems.Add(Plugin.GetPath());
+                listViewPlugin.Items.Add(Item);
             }
         }
     }

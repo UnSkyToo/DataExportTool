@@ -6,7 +6,7 @@ namespace PandoraExport
 {
     public class PandoraExport : IExportPlugin.IExportPlugin
     {
-        private string m_path = string.Empty;
+        private string Path_ = string.Empty;
 
         public PandoraExport()
         {
@@ -27,14 +27,14 @@ namespace PandoraExport
             return "1.0.0.5";
         }
 
-        public void SetPath(string path)
+        public void SetPath(string Path)
         {
-            m_path = path;
+            Path_ = Path;
         }
 
         public string GetPath()
         {
-            return m_path;
+            return Path_;
         }
 
         public bool Export(IExportPlugin.ExportData data)
@@ -43,7 +43,7 @@ namespace PandoraExport
 
             try
             {
-                string fullPath = $"{data.OutputPath}.{GetExportExt()}";
+                string fullPath = $"{data.OutputPath}{data.Name}.{GetExportExt()}";
                 file = new FileStream(fullPath, FileMode.Create, FileAccess.Write);
 
                 // 0 : descript
